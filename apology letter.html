@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dear Chinni Akka 🌸</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #fff0f6;
+      font-family: 'Playfair Display', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .envelope-container {
+      position: relative;
+      width: 90vw;
+      max-width: 400px;
+      height: 60vw;
+      max-height: 300px;
+      perspective: 1000px;
+    }
+
+    .envelope {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background: #fff;
+      border: 2px solid #d45c96;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: #f3b4d5;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transform-origin: top;
+      transition: transform 1s ease-in-out;
+      z-index: 3;
+    }
+
+    .flap.open {
+      transform: rotateX(-180deg);
+    }
+
+    .letter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      background: #fff;
+      box-sizing: border-box;
+      z-index: 2;
+      transform: translateY(100%);
+      transition: transform 1.5s ease-in-out;
+      overflow-y: auto;
+    }
+
+    .letter.open {
+      transform: translateY(0);
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      color: #d45c96;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .message {
+      font-size: 0.95em;
+      color: #555;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    .heart {
+      font-size: 1.8em;
+      animation: pulse 1.5s infinite;
+      color: #ff5d8f;
+      margin-top: 10px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #ffb6d5;
+      color: #fff;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1em;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff93c8;
+    }
+
+    @media screen and (max-height: 500px) {
+      .envelope-container {
+        height: 70vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope-container">
+    <div class="envelope">
+      <div class="flap" id="flap"></div>
+      <div class="letter" id="letter">
+        <h1>Dear Chinni Akka ❤️</h1>
+        <p class="message">
+          I know things are hard for both of us. I have always found a safe place in you.<br><br>
+          You are the person who fixes me up every time. It is really sad to see that you aren’t letting any of us help you when you need to be comforted.<br><br>
+          You can show your anger in several ways, but the worst thing you have ever done is withdraw yourself from my life when all I am is because of you.<br><br>
+          You taught me to wear lipstick when everyone made fun of me for wearing it. When people made fun of my lipstick, you went and got me several different colours.<br><br>
+          Our bond is what many people are jealous of, and I can see it clearly.<br><br>
+          You are always there for me, and I blew it. I know you probably consider me as your enemy, but remember that we are sisters for a reason.<br><br>
+          I don’t know if you'll ever forgive me, but I’ll always be your sister. I know you have other friends and other people you'd rather tell how you are feeling, but for me, Amma, Mamma and YOU are the people I run to first.<br><br>
+          You are my other mother. Happy Mother’s Day. 💖
+        </p>
+        <div class="heart">💗</div>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="openEnvelope()">Open Your Letter ✉️</button>
+
+  <script>
+    function openEnvelope() {
+      document.getElementById("flap").classList.add("open");
+      document.getElementById("letter").classList.add("open");
+    }
+  </script>
+</body>
+</html>
